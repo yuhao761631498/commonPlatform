@@ -123,7 +123,6 @@ public class UrlConfig {
     /**
      * 获取高点列表信息接口
      */
-//    public final static String DeviceListInfo = "/cloud-video/deptAndDevice/all";
     public final static String DeviceListInfo = "/cloud-video/deptAndDevice/tree";
 
     /**
