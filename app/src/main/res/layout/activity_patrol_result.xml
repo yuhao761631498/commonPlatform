@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EDEDED">
+
+    <include
+        android:id="@+id/inc_topBar"
+        layout="@layout/layout_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.noober.background.view.BLConstraintLayout
+        android:id="@+id/cl_subLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="80dp"
+        android:paddingStart="8dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="6dp"
+        app:bl_corners_radius="2dp"
+        app:bl_solid_color="@color/color_436BFF"
+        app:layout_constraintTop_toBottomOf="@+id/inc_topBar">
+
+        <TextView
+            android:id="@+id/tv_patrolFinishLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="日常巡逻结束"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_distanceContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_patrolFinishLabel"
+            tools:text="距离：2710米" />
+
+        <TextView
+            android:id="@+id/tv_lockPatrolTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableEnd="@mipmap/ic_patrol_white_arrow"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="告警巡逻轨迹"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_distanceContent" />
+
+    </com.noober.background.view.BLConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_trackContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_patrol_result"
+        app:layout_constraintTop_toBottomOf="@+id/cl_subLayout1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

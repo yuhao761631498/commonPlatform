@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_fafafa"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_patrolTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="5dp"
+        android:text="巡逻时间"
+        android:textColor="@color/color_4A4A4A"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/start_time_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:hint="开始时间"
+        android:minHeight="@dimen/dp_20"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toStartOf="@+id/view_line1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_patrolTimeLabel" />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="1dp"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@color/color_d2d2d2"
+        app:layout_constraintBottom_toBottomOf="@+id/start_time_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/start_time_textview" />
+
+    <TextView
+        android:id="@+id/end_time_textview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:hint="结束时间"
+        android:minHeight="@dimen/dp_20"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_line1"
+        app:layout_constraintTop_toTopOf="@+id/start_time_textview" />
+
+    <TextView
+        android:id="@+id/tv_patrolTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="巡逻类型"
+        android:textColor="@color/color_4A4A4A"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="@+id/start_time_textview"
+        app:layout_constraintTop_toBottomOf="@+id/start_time_textview" />
+
+    <CheckBox
+        android:id="@+id/cb_eventType1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/shape_alarm_uncheck"
+        android:button="@android:color/transparent"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_70"
+        android:minHeight="@dimen/dp_25"
+        android:text="日常巡逻"
+        android:textColor="@color/color_78797B"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toStartOf="@+id/cb_eventType2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/start_time_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tv_patrolTypeLabel" />
+
+    <CheckBox
+        android:id="@+id/cb_eventType2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_alarm_uncheck"
+        android:button="@android:color/transparent"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_70"
+        android:minHeight="@dimen/dp_25"
+        android:text="联合执法"
+        android:textColor="@color/color_78797B"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="@+id/end_time_textview"
+        app:layout_constraintStart_toEndOf="@+id/cb_eventType1"
+        app:layout_constraintTop_toTopOf="@+id/cb_eventType1" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/view_group1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_patrolTypeLabel,
+        cb_eventType1,cb_eventType2" />
+
+    <TextView
+        android:id="@+id/tv_patrolRecordTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:text="巡查记录类型"
+        android:textColor="@color/color_4A4A4A"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintStart_toStartOf="@+id/cb_eventType1"
+        app:layout_constraintTop_toBottomOf="@+id/cb_eventType1" />
+
+    <CheckBox
+        android:id="@+id/cb_recordType_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_weight="1"
+        android:background="@drawable/shape_alarm_uncheck"
+        android:button="@android:color/transparent"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_70"
+        android:minHeight="@dimen/dp_25"
+        android:text="一人多杆"
+        android:textColor="@color/color_78797B"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toStartOf="@+id/cb_recordType_2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@+id/start_time_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tv_patrolRecordTypeLabel" />
+
+    <CheckBox
+        android:id="@+id/cb_recordType_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_alarm_uncheck"
+        android:button="@android:color/transparent"
+        android:gravity="center"
+        android:minWidth="@dimen/dp_70"
+        android:minHeight="@dimen/dp_25"
+        android:text="网鱼行为"
+        android:textColor="@color/color_78797B"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="@+id/end_time_textview"
+        app:layout_constraintStart_toEndOf="@+id/cb_recordType_1"
+        app:layout_constraintTop_toTopOf="@+id/cb_recordType_1" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/color_E0E0E0"
+        android:minHeight="@dimen/dp_33"
+        android:text="重置"
+        android:textColor="@color/color_7F7F7F"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintEnd_toStartOf="@+id/confirm_button"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_recordType_1" />
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_5099FD"
+        android:minHeight="@dimen/dp_33"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reset_button"
+        app:layout_constraintTop_toTopOf="@+id/reset_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

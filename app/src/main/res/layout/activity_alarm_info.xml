@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_224CD0"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_fafafa" />
+
+    <RelativeLayout
+        android:id="@+id/ll_topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/color_224CD0"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="@dimen/dp_36"
+            android:contentDescription="@string/app_name"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:id="@+id/org_name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back_imageview"
+            android:text="预警信息"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_21" />
+
+        <ImageView
+            android:id="@+id/iv_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@+id/iv_search"
+            android:contentDescription="@string/app_name"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/selector_attention_bg" />
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:contentDescription="@string/app_name"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_subLayout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ll_subLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/ll_topBarLayout">
+
+        <TextView
+            android:id="@+id/tv_alarmType1Num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_DC9954"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_alarmType1Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="待核实"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:id="@+id/view_alarmType1Line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_4572FF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_subLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/ll_subLayout1"
+        app:layout_constraintRight_toLeftOf="@+id/ll_subLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/ll_topBarLayout">
+
+        <TextView
+            android:id="@+id/tv_alarmType2Num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_DCD726"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_alarmType2Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="待接警"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:id="@+id/view_alarmType2Line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_4572FF"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_subLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/ll_subLayout2"
+        app:layout_constraintRight_toLeftOf="@+id/ll_subLayout4"
+        app:layout_constraintTop_toTopOf="@+id/ll_subLayout2">
+
+        <TextView
+            android:id="@+id/tv_alarmType3Num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_FF5B5B"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_alarmType3Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="待处理"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:id="@+id/view_alarmType3Line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_4572FF"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_subLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/ll_subLayout3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ll_subLayout2">
+
+        <TextView
+            android:id="@+id/tv_alarmType4Num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/color_79AA57"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_alarmType4Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="已处理"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12" />
+
+        <View
+            android:id="@+id/view_alarmType4Line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_4572FF"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_subLayout2">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_EDEDED"
+            android:overScrollMode="never"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_alarm_center" />
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <com.gdu.command.views.drop.DropDownMenu
+        android:id="@+id/ddm_searchMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/ll_topBarLayout"
+        android:visibility="gone"
+        app:dddividerColor="@color/color_333333"
+        app:ddmaskColor="@color/mask_color"
+        app:ddmenuBackgroundColor="@color/white"
+        app:ddmenuMenuHeightPercent="0.5"
+        app:ddmenuSelectedIcon="@mipmap/drop_down_selected_icon"
+        app:ddmenuTextSize="13sp"
+        app:ddmenuUnselectedIcon="@mipmap/drop_down_unselected_icon"
+        app:ddtextSelectedColor="@color/drop_down_selected"
+        app:ddtextUnselectedColor="@color/drop_down_unselected"
+        app:ddunderlineColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_topBarLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

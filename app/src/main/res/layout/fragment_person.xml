@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/icon_person_bg"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_24">
+
+        <TextView
+            android:id="@+id/tv_work_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="24dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/iv_head_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="湖北应急管理部" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableRight="@mipmap/icon_edit_name"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_work_unit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_work_unit"
+            tools:text="某某某" />
+
+        <TextView
+            android:id="@+id/tv_job_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:text="大队长" />
+
+        <ImageView
+            android:id="@+id/iv_head_img"
+            android:layout_width="@dimen/dp_88"
+            android:layout_height="@dimen/dp_88"
+            android:layout_marginRight="@dimen/dp_24"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@mipmap/default_head"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_artificial_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_artificial_alarm"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="人工告警"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_public_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_public_upload"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="公众上报"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_duty_arrangements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_duty"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="值班安排"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_person_patrol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_patrol"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="3dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        android:text="个人巡逻轨迹与记录"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_masses_patrol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_masses_patrol"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:visibility="gone"
+        android:text="群众巡逻轨迹与记录"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_organization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_organization"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="组织架构"
+        android:visibility="gone"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/tv_open_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_show_location_switch"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:text="开启定位"
+            android:textColor="@color/color_DE000000"
+            android:textSize="16sp" />
+
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/sb_location"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            style="@style/SwitchButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswAnimationDuration="300"
+            app:kswBackDrawable="@drawable/ios_back_drawable"
+            app:kswThumbDrawable="@drawable/ios_thumb_selector"
+            app:kswThumbMarginBottom="-8dp"
+            app:kswThumbMarginLeft="-5dp"
+            app:kswThumbMarginRight="-5dp"
+            app:kswThumbMarginTop="-2.5dp"
+            app:kswThumbRangeRatio="1.4"/>
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_question"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="常见问题"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_about"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="关于我们"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:drawableLeft="@mipmap/icon_setting"
+        android:drawableRight="@mipmap/icon_right_arrow"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:text="系统设置"
+        android:textColor="@color/color_DE000000"
+        android:textSize="16sp" />
+
+</LinearLayout>

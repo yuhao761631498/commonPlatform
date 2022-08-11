@@ -1,0 +1,7 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir.path}/gradle/base.gradle"
+
+dependencies {
+    api 'com.github.CarGuo:GSYIjkJava:1.0.0'
+}

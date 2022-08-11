@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="请选择性别"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_15"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:background="@color/color_5099FD"
+        android:visibility="visible"
+        />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_man"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="男"
+        android:gravity="center"
+        android:textSize="17sp"
+        app:bl_selected_solid_color="@color/white"
+        app:bl_selected_textColor="@color/color_5099FD"
+        app:bl_unSelected_solid_color="@color/white"
+        app:bl_unSelected_textColor="@color/color_666666"
+        />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_fafafa"/>
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_woman"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="女"
+        android:gravity="center"
+        android:textSize="17sp"
+        app:bl_selected_solid_color="@color/white"
+        app:bl_selected_textColor="@color/color_5099FD"
+        app:bl_unSelected_solid_color="@color/white"
+        app:bl_unSelected_textColor="@color/color_666666"
+        />
+
+</LinearLayout>

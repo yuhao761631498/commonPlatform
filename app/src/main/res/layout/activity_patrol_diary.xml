@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/view_mapContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_startPatrolBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:drawableLeft="@mipmap/ic_start_patrol"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:minHeight="@dimen/dp_30"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="开始巡逻"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:bl_corners_radius="15dp"
+        app:bl_solid_color="#FF436BFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_addPatrolBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:gravity="center"
+        android:minWidth="120dp"
+        android:minHeight="@dimen/dp_30"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="添加巡逻记录"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:bl_corners_bottomLeftRadius="15dp"
+        app:bl_corners_topLeftRadius="15dp"
+        app:bl_solid_color="#FF436BFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_endPatrolBtn"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_endPatrolBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="45dp"
+        android:gravity="center"
+        android:minWidth="120dp"
+        android:minHeight="@dimen/dp_30"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="结束巡逻"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:bl_corners_bottomRightRadius="15dp"
+        app:bl_corners_topRightRadius="15dp"
+        app:bl_solid_color="#FF436BFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_addPatrolBtn"
+        app:layout_constraintTop_toTopOf="@+id/tv_addPatrolBtn" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/view_onPatrolGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_addPatrolBtn,tv_endPatrolBtn" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_locationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="70dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_manual_locaiton"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_zoomOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_zoom_out"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_locationBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_locationBtn" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_enlargeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_enlarge"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_zoomOutBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_zoomOutBtn" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_back_black"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_goHistoryBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_go_history"
+        android:visibility="gone"
+        app:bl_corners_radius="2dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_backBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_backBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+def config = rootProject.ext.ver
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 21
+        versionName PROJ_VERSION
+    }
+
+    buildTypes.all {
+        it.buildConfigField "String", "VERSION_NAME", "\"${PROJ_VERSION}\""
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+}

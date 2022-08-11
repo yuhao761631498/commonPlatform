@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:minHeight="64dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="10dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/tv_timeYearToDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2020年12月20日" />
+
+    <TextView
+        android:id="@+id/tv_timeDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:gravity="right"
+        android:maxLines="1"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_timeYearToDay"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_timeYearToDay"
+        tools:text="2020年12月20日" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_newIcon"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_marginRight="10dp"
+        app:bl_corners_radius="4dp"
+        app:bl_solid_color="@color/color_F24343"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_timeDetail"
+        app:layout_constraintRight_toLeftOf="@+id/tv_timeDetail"
+        app:layout_constraintTop_toTopOf="@+id/tv_timeDetail" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_timeYearToDay"
+        tools:text="武汉北侧约3公里处发现违法钓鱼" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_subLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_160"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_top_bg"
+            android:minHeight="@dimen/dp_120"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_27"
+            android:layout_marginTop="@dimen/dp_12"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/icon_home_logo"
+            app:layout_constraintLeft_toLeftOf="@+id/cs_home_menue_bg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/app_internal_name"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_20"
+            app:autoSizeMaxTextSize="@dimen/sp_20"
+            app:autoSizeMinTextSize="@dimen/sp_12"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+            app:layout_constraintLeft_toRightOf="@+id/home_logo"
+            app:layout_constraintTop_toTopOf="@+id/home_logo" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cs_home_menue_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/home_menue_bg"
+            android:minWidth="@dimen/dp_300"
+            android:minHeight="@dimen/dp_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_logo">
+
+            <TextView
+                android:id="@+id/alarm_center_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableTop="@mipmap/icon_alarm"
+                android:drawablePadding="8dp"
+
+                android:gravity="center_horizontal"
+                android:text="预警信息"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintEnd_toStartOf="@+id/video_control_layout"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/video_control_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_video_control2"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="人机联防"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="@+id/alarm_center_layout"
+                app:layout_constraintEnd_toStartOf="@+id/tv_patrolDiary"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/alarm_center_layout"
+                app:layout_constraintTop_toTopOf="@+id/alarm_center_layout" />
+
+            <TextView
+                android:id="@+id/ll_resourceLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_real_resource"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="资源分布"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/video_control_layout"
+                app:layout_constraintEnd_toStartOf="@+id/my_case_layout"
+                app:layout_constraintStart_toEndOf="@+id/video_control_layout"
+                app:layout_constraintTop_toTopOf="@+id/video_control_layout" />
+
+            <TextView
+                android:id="@+id/my_case_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/icon_my_case"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="我的案件"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ll_resourceLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ll_resourceLayout"
+                app:layout_constraintTop_toTopOf="@+id/ll_resourceLayout" />
+
+            <TextView
+                android:id="@+id/tv_patrolDiary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:drawableTop="@mipmap/icon_patrol_diary"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="日常巡逻"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/video_control_layout"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fore_warn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/video_control_layout"
+                app:layout_constraintTop_toTopOf="@+id/video_control_layout" />
+
+            <TextView
+                android:id="@+id/tv_dataMonitoring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/ic_data_monitoring"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="数据监测"
+                android:textSize="@dimen/sp_13"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/video_control_layout"
+                app:layout_constraintStart_toEndOf="@+id/tv_patrolDiary"
+                app:layout_constraintTop_toTopOf="@+id/tv_patrolDiary" />
+
+            <TextView
+                android:id="@+id/tv_fore_warn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawableTop="@mipmap/ic_fore_warn_stat"
+                android:drawablePadding="8dp"
+                android:gravity="center_horizontal"
+                android:text="预警统计"
+                android:textSize="@dimen/sp_13"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_patrolDiary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_patrolDiary"
+                app:layout_constraintTop_toTopOf="@+id/tv_patrolDiary" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_today_alarm_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_today_alarm"
+        android:gravity="center_vertical"
+        android:text="今日报警"
+        android:textColor="@color/color_666666"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_subLayout1" />
+
+    <TextView
+        android:id="@+id/tv_today_alarm_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:gravity="center_vertical"
+        android:text="0"
+        android:textColor="@color/color_0096ff"
+        android:textSize="55sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_alarm_label" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_illegal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_subLayout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_today_alarm_count">
+
+        <include
+            android:id="@+id/inc_find_ship"
+            layout="@layout/home_alarm_bg"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintEnd_toStartOf="@+id/inc_find_people"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_find_people"
+            layout="@layout/home_alarm_bg"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/inc_find_ship"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_illegal_fish"
+            layout="@layout/home_alarm_bg"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_15"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@+id/inc_find_ship"
+            app:layout_constraintTop_toBottomOf="@+id/inc_find_people" />
+
+        <include
+            android:id="@+id/inc_staff_retention"
+            layout="@layout/home_alarm_bg"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_80"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="@+id/inc_find_people"
+            app:layout_constraintTop_toBottomOf="@+id/inc_find_people"
+            app:layout_constraintTop_toTopOf="@+id/inc_illegal_fish" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/dp_22"
+        app:layout_constraintTop_toBottomOf="@+id/cs_illegal">
+
+        <include
+            android:id="@+id/inc_wait_receive_alarm"
+            layout="@layout/layout_alarm_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inc_wait_deal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_wait_deal"
+            layout="@layout/layout_alarm_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/inc_has_deal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/inc_wait_receive_alarm"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/inc_has_deal"
+            layout="@layout/layout_alarm_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/inc_wait_deal"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

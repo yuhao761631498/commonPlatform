@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_70Point_B2000000">
+
+    <View
+        android:id="@+id/view_placeHold1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cl_contentLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.noober.background.view.BLConstraintLayout
+        android:id="@+id/cl_contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:minHeight="420dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dispatchContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/tv_cancelBtn"
+            app:layout_constraintLeft_toRightOf="@+id/tv_uploadVideoLabel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="15"
+            android:layout_marginBottom="10dp"
+            tools:listitem="@layout/item_alarm_dispatched" />
+
+        <TextView
+            android:id="@+id/tv_cancelBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_5099FD"
+            android:gravity="center"
+            android:minHeight="34dp"
+            android:text="@string/base_cancel"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </com.noober.background.view.BLConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

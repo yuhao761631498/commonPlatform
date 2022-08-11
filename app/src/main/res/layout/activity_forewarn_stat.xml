@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fafafa"
+    android:orientation="vertical"
+    tools:context=".ui.data.ForewarnStatActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/color_224CD0"
+        android:paddingRight="@dimen/dp_24"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dp_15"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/iv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_back"
+            android:text="@string/forewarn_stat"
+            android:textColor="@color/colorThite"
+            android:textSize="@dimen/sp_21" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 预警数据统计-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_10">
+
+                <View
+                    android:id="@+id/view_blue"
+                    android:layout_width="@dimen/dp_4"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp_9"
+                    android:background="@color/color_5099FD"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_data_stat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_toRightOf="@+id/view_blue"
+                    android:text="预警数据统计"
+                    android:textColor="@color/color_333333"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <com.noober.background.view.BLRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:layout_marginRight="@dimen/dp_9"
+                android:layout_marginBottom="@dimen/dp_22"
+                android:background="@color/white"
+                app:bl_corners_radius="3dp"
+                app:bl_solid_color="@color/white">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pie_chart_forewarn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_270"
+                    android:layout_below="@+id/tv_case_total"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/pie_chart_forewarn"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_85"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_30"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/find_ship_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_8"
+                                android:src="@mipmap/icon_find_ship" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_find_ship_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:text="0"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/find_ship"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:background="@drawable/find_people_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_8"
+                                android:src="@mipmap/icon_find_people" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_find_people_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:text="0"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/find_people"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_85"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/illegal_fishing_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_8"
+                                android:src="@mipmap/icon_illegal_finsh" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_illegal_fishing"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:text="158"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/illegal_fishing"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_weight="1"
+                            android:background="@drawable/staff_retention_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/dp_8"
+                                android:src="@mipmap/icon_staff_retention" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:orientation="vertical"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_staff_retention"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="right"
+                                    android:text="0"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/staff_retention"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/sp_18" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.noober.background.view.BLRelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_10">
+
+                <View
+                    android:id="@+id/view_blue1"
+                    android:layout_width="@dimen/dp_4"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp_9"
+                    android:background="@color/color_5099FD"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_deal_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_toRightOf="@+id/view_blue1"
+                    android:text="处理结果统计"
+                    android:textColor="@color/color_333333"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <com.noober.background.view.BLRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:layout_marginRight="@dimen/dp_9"
+                app:bl_corners_radius="3dp"
+                app:bl_solid_color="@color/white">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pie_chart_deal_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_220"
+                    android:layout_below="@+id/tv_alarm_type_title_2"
+                    android:layout_marginBottom="@dimen/dp_10" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/pie_chart_deal_result">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_85"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_marginRight="@dimen/dp_8">
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/find_ship_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_verbal_warn"
+                                android:padding="@dimen/dp_8"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_verbal_warning"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="158"
+                                    android:gravity="right"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/verbal_warning"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/find_people_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_administrative_penalty"
+                                android:padding="@dimen/dp_8"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_administrative_penalty"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="158"
+                                    android:gravity="right"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/administrative_penalty"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_85"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_marginRight="@dimen/dp_8"
+                        android:layout_marginTop="@dimen/dp_15">
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/illegal_fishing_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_administrative_attachment"
+                                android:padding="@dimen/dp_8"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_administrative_attachment"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="158"
+                                    android:gravity="right"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/administrative_attachment"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_marginLeft="@dimen/dp_16"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/staff_retention_bg">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_other_penalty"
+                                android:padding="@dimen/dp_8"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:padding="@dimen/dp_8">
+
+                                <TextView
+                                    android:id="@+id/tv_other_penalty"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="158"
+                                    android:gravity="right"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/other_penalty"
+                                    android:textSize="@dimen/sp_18"
+                                    android:textColor="@color/white"/>
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.noober.background.view.BLRelativeLayout>
+
+
+            <com.noober.background.view.BLRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_9"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_9"
+                android:background="@color/white"
+                app:bl_corners_radius="3dp"
+                app:bl_solid_color="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_case_deal_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_2"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:text="告警设备排名"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_case_deal_rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_case_deal_unit"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_data_monitor_progress_layout" />
+
+            </com.noober.background.view.BLRelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

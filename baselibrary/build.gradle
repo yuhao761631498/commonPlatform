@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.ver
+def library = rootProject.ext.library
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "isDebug", "true")
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            buildConfigField("boolean", "isDebug", "false")
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    publishNonDefault true //默认不为发布版本
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(path: ':GduModel')
+    //Android支持库
+    api library.design
+    api library.constraint
+
+    //RxJava2+Retrofit2 网络框架
+    api library.okio
+    api library.okhttp
+    api library.okhttp_logging
+    api library.retrofit2
+    api library.gson
+    api library.retrofit2_gson
+    api library.retrofit2_adapter
+    api library.rxandroid
+    api library.rxlife3
+
+    //常用工具库
+    api library.BaseRecyclerViewAdapterHelper
+    api library.SmartRefreshLayout
+    api library.logger
+    api library.glide
+    api library.Banner
+    // 修改状态栏颜色 https://github.com/gyf-dev/ImmersionBar
+    api library.immersionbar
+    api library.bugly
+
+    // EventBus
+    api library.eventbus
+
+    //内存泄漏检测
+    debugApi 'com.squareup.leakcanary:leakcanary-android:2.8.1'
+    releaseApi 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+
+    // 鲁班压缩工具: https://github.com/Curzibn/Luban
+    api 'top.zibin:Luban:1.1.8'
+    // 单滚轮库
+    api 'com.wx.wheelview:wheelview:1.3.3'
+    // MMKV(Self have proguard)：https://github.com/Tencent/MMKV
+    api 'com.tencent:mmkv-static:1.2.12'
+}

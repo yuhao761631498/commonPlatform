@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/inc_topBar"
+        layout="@layout/layout_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inc_topBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
+
+            <include
+                android:id="@+id/inc_caseDesc"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/inc_caseSource"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_caseDesc" />
+
+            <include
+                android:id="@+id/inc_caseTime"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_caseSource" />
+
+            <include
+                android:id="@+id/inc_caseType"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_caseTime" />
+
+            <include
+                android:id="@+id/inc_alarmTime"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_caseType" />
+
+            <include
+                android:id="@+id/inc_reportPeople"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_alarmTime" />
+
+            <include
+                android:id="@+id/inc_contactPhone"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_reportPeople" />
+
+            <include
+                android:id="@+id/inc_idCard"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_contactPhone" />
+
+            <include
+                android:id="@+id/inc_reportAddress"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_idCard" />
+
+            <include
+                android:id="@+id/inc_situationReport"
+                layout="@layout/layout_base_label_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/inc_reportAddress" />
+
+            <TextView
+                android:id="@+id/tv_scenePicLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="55dp"
+                android:minHeight="40dp"
+                android:text="现场照片"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inc_situationReport" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_picContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_scenePicLabel"
+                app:layout_constraintTop_toTopOf="@+id/tv_scenePicLabel"
+                app:spanCount="5"
+                tools:listitem="@layout/item_case_picture" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_confirmBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:text="发送"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="@color/color_436BFF"
+                app:layout_constraintTop_toBottomOf="@+id/rv_picContent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

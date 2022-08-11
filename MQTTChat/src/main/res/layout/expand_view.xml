@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="16.0dp"
+    android:paddingLeft="24.0dp"
+    android:paddingRight="24.0dp"
+    android:paddingTop="16.0dp">
+
+    <RelativeLayout
+        android:id="@+id/chat_editor_more_gallary"
+        android:background="@drawable/choose_pic_bg"
+        android:layout_marginRight="@dimen/dp_23"
+        android:layout_width="@dimen/dp_65"
+        android:layout_height="@dimen/dp_65">
+        <ImageView
+            android:id="@+id/chat_editor_more_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/content_desc_ignored"
+            android:src="@mipmap/ic_chat_more_camera" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_editor_take_photo"
+        android:background="@drawable/choose_pic_bg"
+        android:layout_marginRight="@dimen/dp_23"
+        android:layout_width="@dimen/dp_65"
+        android:layout_height="@dimen/dp_65">
+        <ImageView
+            android:id="@+id/chat_editor_more_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/content_desc_ignored"
+            android:src="@mipmap/ic_chat_take_photo" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_editor_take_video"
+        android:background="@drawable/choose_pic_bg"
+        android:layout_width="@dimen/dp_65"
+        android:layout_height="@dimen/dp_65">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/content_desc_ignored"
+            android:src="@mipmap/ic_chat_take_video" />
+    </RelativeLayout>
+</LinearLayout>

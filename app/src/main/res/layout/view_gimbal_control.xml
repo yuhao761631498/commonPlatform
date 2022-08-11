@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_16"
+    tools:background="@color/exo_black_opacity_60">
+
+    <com.gdu.command.views.SteeringWheelView
+        android:id="@+id/swv_gimbalRocker"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="@dimen/dp_130"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fl_gimbal_bg"-->
+<!--        android:layout_width="@dimen/dp_130"-->
+<!--        android:layout_height="@dimen/dp_130"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_marginTop="@dimen/dp_10"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_gimbal_circle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="@dimen/dp_4"-->
+<!--            android:src="@mipmap/gimball_direction_2" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_gimbal_move"-->
+<!--            android:layout_width="@dimen/dp_45"-->
+<!--            android:layout_height="@dimen/dp_45"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@mipmap/button_default_gimbal" />-->
+<!--    </FrameLayout>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_functionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swv_gimbalRocker">
+
+        <RelativeLayout
+            android:id="@+id/rl_seekBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/tv_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_21"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/sb_speed"
+                android:layout_width="@dimen/dp_240"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_130"
+                android:focusable="true"
+                android:max="4980"
+                android:maxHeight="@dimen/dp_4"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:progress="980"
+                android:progressDrawable="@drawable/icon_seek_bar_progress"
+                android:thumb="@drawable/icon_seek_bar_thumb" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="速度"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/speed_ptzview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:minHeight="30dp"
+            android:text="速度"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toLeftOf="@+id/zoom_ptzview"
+            app:layout_constraintTop_toTopOf="@+id/zoom_ptzview" />
+
+        <TextView
+            android:id="@+id/zoom_ptzview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:minHeight="30dp"
+            android:text="变倍"
+            android:textColor="@color/color_80FFFFFF"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toLeftOf="@+id/focus_ptzview"
+            app:layout_constraintTop_toTopOf="@+id/focus_ptzview" />
+
+        <TextView
+            android:id="@+id/focus_ptzview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:minHeight="30dp"
+            android:text="变焦"
+            android:textColor="@color/color_80FFFFFF"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintRight_toLeftOf="@+id/iris_ptzview"
+            app:layout_constraintTop_toTopOf="@+id/iris_ptzview" />
+
+        <TextView
+            android:id="@+id/iris_ptzview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:minHeight="30dp"
+            android:text="光圈"
+            android:textColor="@color/color_80FFFFFF"
+            android:textSize="@dimen/sp_14"
+            android:visibility="visible"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_streamFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:minHeight="30dp"
+        android:text="标清"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintRight_toLeftOf="@+id/cl_functionLayout"
+        app:layout_constraintTop_toTopOf="@+id/cl_functionLayout" />
+
+    <TextView
+        android:id="@+id/tv_SDStream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:minHeight="30dp"
+        android:text="标清"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/tv_streamFormat"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_streamFormat" />
+
+    <TextView
+        android:id="@+id/tv_HDStream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:minHeight="30dp"
+        android:text="高清"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/tv_SDStream"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_SDStream" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/view_streamFormat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tv_SDStream,tv_HDStream" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

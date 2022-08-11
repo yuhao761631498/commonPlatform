@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.noober.background.view.BLTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_bottom_dialog_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:maxLines="1"
+    android:minHeight="40dp"
+    android:textColor="@color/color_5099FD"
+    android:textSize="18sp"
+    app:bl_corners_radius="10dp"
+    app:bl_solid_color="@android:color/white"
+    tools:text="取消" />

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.noober.background.view.BLConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+    app:bl_corners_topLeftRadius="10dp"
+    app:bl_corners_topRightRadius="10dp"
+    app:bl_solid_color="@android:color/white">
+
+    <TextView
+        android:id="@+id/tv_locShotName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="案件名称" />
+
+    <TextView
+        android:id="@+id/tv_locDetailName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_666666"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_locShotName"
+        app:layout_constraintRight_toRightOf="@+id/tv_locShotName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_locShotName"
+        app:layout_goneMarginTop="10dp"
+        tools:text="汉口江滩附件疑似有非法捕捞人员，请及时核查调派武汉市渔政执法人员前往支援" />
+
+    <com.gdu.utils.DrawableCenterTextView
+        android:id="@+id/tv_goHereBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:drawableLeft="@mipmap/ic_navigation"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:text="到这去"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:bl_corners_radius="19dp"
+        app:bl_solid_color="@color/color_5099FD"
+        app:layout_constraintTop_toBottomOf="@+id/tv_locDetailName" />
+</com.noober.background.view.BLConstraintLayout>

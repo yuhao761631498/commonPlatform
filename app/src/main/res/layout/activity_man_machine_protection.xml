@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/man_machine_view_mapContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_4"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/color_80000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/ic_back" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_locationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="70dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_manual_locaiton"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_zoomOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_zoom_out"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_locationBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_locationBtn" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_enlargeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_enlarge"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_zoomOutBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_zoomOutBtn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_video_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_curMonitor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="**路**街道" />
+
+        <ImageView
+            android:id="@+id/iv_video_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_20"
+            android:src="@mipmap/icon_person_next"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_curMonitor_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_curMonitor_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

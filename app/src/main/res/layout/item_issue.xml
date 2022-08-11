@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_8"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_issue_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_issue_image"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/iv_issue_image"
+        app:layout_constraintTop_toTopOf="@+id/iv_issue_image"
+        tools:text="非法捕捞" />
+
+    <ImageView
+        android:id="@+id/iv_issue_image"
+        android:layout_width="@dimen/dp_52"
+        android:layout_height="@dimen/dp_52"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/issue_unhandle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/case_picture_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/icon_case_default1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_issue_image" />
+
+    <TextView
+        android:id="@+id/tv_issue_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textColor="#333333"
+        android:visibility="gone"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/case_picture_view"
+        tools:text="汉口江滩附件疑似有非法捕捞人员，请及时核查 调派武汉市渔政执法人员前往支援" />
+
+    <TextView
+        android:id="@+id/tv_issue_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableLeft="@mipmap/issue_location"
+        android:drawablePadding="5dp"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/tv_issue_description"
+        tools:text="汉口江滩滨江门武汉天地" />
+
+    <TextView
+        android:id="@+id/tv_issue_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/issue_time"
+        android:drawablePadding="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#666666"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_issue_location"
+        app:layout_constraintRight_toLeftOf="@+id/tv_issue_department"
+        app:layout_constraintTop_toBottomOf="@+id/tv_issue_location"
+        tools:text="2021/03/15  12:52:39" />
+
+    <TextView
+        android:id="@+id/tv_issue_department"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@mipmap/issue_department"
+        android:drawablePadding="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="武汉渔政"
+        android:textColor="#333333"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_issue_time"
+        app:layout_constraintRight_toRightOf="@+id/tv_issue_location"
+        app:layout_constraintTop_toTopOf="@+id/tv_issue_time" />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_f1f1f1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_issue_time" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/issue_no_handle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/dial_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/icon_dial"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:text="拨号(报案人)"
+            android:textColor="@color/color_436BFF"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/handle_case_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/handle_case_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_police"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="接警"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/color_436BFF"
+            app:layout_constraintLeft_toRightOf="@+id/dial_layout"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/issue_instruction_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/tv_instructionDail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_dial"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="拨号(报案人)"
+            android:textColor="@color/color_436BFF" />
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/tv_instructionBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/ic_instruction"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="批示"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/color_436BFF" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/issue_handling_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <ImageView
+            android:id="@+id/issue_locate_imageview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_issue_locate"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/issue_dial_imageview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/issue_dial_imageview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_dial"
+            app:layout_constraintLeft_toRightOf="@+id/issue_locate_imageview"
+            app:layout_constraintRight_toLeftOf="@+id/issue_chat_imageview"
+            app:layout_constraintTop_toTopOf="@+id/issue_locate_imageview" />
+
+        <ImageView
+            android:id="@+id/issue_chat_imageview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_issue_chat"
+            app:layout_constraintLeft_toRightOf="@+id/issue_dial_imageview"
+            app:layout_constraintRight_toLeftOf="@+id/view_space1"
+            app:layout_constraintTop_toTopOf="@+id/issue_dial_imageview" />
+
+        <Space
+            android:id="@+id/view_space1"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/deal_issue_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_issue_deal"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:text="取证"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/color_436BFF"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintLeft_toRightOf="@+id/view_space1"
+            app:layout_constraintRight_toLeftOf="@+id/tv_finishBtn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gdu.utils.DrawableCenterTextView
+            android:id="@+id/tv_finishBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/ic_case_close"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:text="结案"
+            android:textColor="@android:color/white"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/color_436BFF"
+            app:layout_constraintLeft_toRightOf="@+id/deal_issue_layout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/deal_issue_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/issue_handled_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1">
+
+        <TextView
+            android:id="@+id/issue_end_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/color_bbbbbb"
+            android:textSize="@dimen/sp_14"
+            tools:text="案件已经结束" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

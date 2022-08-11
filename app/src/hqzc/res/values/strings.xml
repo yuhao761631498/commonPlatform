@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">火情侦察</string>
+    <string name="app_internal_name">城市高点火灾预警侦查系统</string>
+    <string name="copy_right_info">Copyright@ 柳州市消防支队</string>
+</resources>

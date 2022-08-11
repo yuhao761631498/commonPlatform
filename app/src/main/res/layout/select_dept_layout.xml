@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_bg_topleft_topright">
+
+    <ListView
+        android:id="@+id/id_tree"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/tree_listview_item"
+        android:dividerHeight="1px"
+        android:divider="@color/color_E0E0E0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

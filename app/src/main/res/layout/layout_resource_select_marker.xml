@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--资源分布 组织机构-->
+    <com.noober.background.view.BLRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bl_corners_radius="3dp"
+        app:bl_solid_color="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_8">
+
+                <View
+                    android:id="@+id/view_blue1"
+                    android:layout_width="@dimen/dp_4"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_9"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:background="#5099FD"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="资源信息"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/view_blue1"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_organization"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_organization"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_centerInParent="true"
+                    android:background="#E6F7FE"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_organization"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_resource_organization"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_organization_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="组织架构"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_organization"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_person"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_person"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_person"
+                    android:scaleType="centerInside"
+                    android:background="#E6F7FE"
+                    android:src="@mipmap/ic_dialog_resource_person"/>
+
+                <TextView
+                    android:id="@+id/tv_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="组织人员"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_person"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_airplane"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_airplane"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_airplane"
+                    android:scaleType="centerInside"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_dialog_resource_airplane"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_airplane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="无人机"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_airplane"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_high_monitor"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_high_monitor"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_high_monitor"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_resource_high_point"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_high_monitor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="高点监控"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_high_monitor"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_important_region"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_important_region"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_important_region"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_resource_region"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_important_region"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重点区域"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_important_region"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_important_circuit"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_important_circuit"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_important_circuit"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_resource_circuit"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_important_circuit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="重点线路"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_important_circuit"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_focus_point"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_focus_point"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_focus_point"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_resource_focus"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_focus_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="关注点位"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_focus_point"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_E9EEFF"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10">
+
+                <CheckBox
+                    android:id="@+id/cb_case_info"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/selector_res_menu_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:id="@+id/iv_case_info"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@+id/cb_case_info"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/ic_dialog_case_info"
+                    android:background="#E6F7FE"/>
+
+                <TextView
+                    android:id="@+id/tv_case_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="案件信息"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/iv_case_info"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="visible"
+                android:layout_marginBottom="19dp"
+                android:background="@color/color_E9EEFF"/>
+
+        </LinearLayout>
+
+    </com.noober.background.view.BLRelativeLayout>
+
+</LinearLayout>

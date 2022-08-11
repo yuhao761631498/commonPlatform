@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.gdu.command.ui.home.HomeFragment1"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home_1" />
+
+    <fragment
+        android:id="@+id/navigation_video"
+        android:name="com.gdu.command.ui.video.view.VideoFragment"
+        android:label="@string/title_video"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/navigation_organization"
+        android:name="com.gdu.command.ui.organization.OrganizationFragment"
+        android:label="@string/title_organization"
+        tools:layout="@layout/fragment_organization" />
+
+    <fragment
+        android:id="@+id/navigation_message"
+        android:name="com.gdu.command.ui.message.NoticeMessageFragment"
+        android:label="@string/title_message"
+        tools:layout="@layout/fragment_notice_message" />
+
+    <fragment
+        android:id="@+id/navigation_person"
+        android:name="com.gdu.command.ui.person.PersonFragment"
+        android:label="@string/title_person"
+        tools:layout="@layout/fragment_person" />
+</navigation>

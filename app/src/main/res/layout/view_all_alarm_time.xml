@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_fafafa"
+    android:minHeight="@dimen/dp_100">
+
+    <TextView
+        android:id="@+id/tv_alarmDayTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:minHeight="40dp"
+        android:textColor="@color/color_666666"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="选择某一天时间" />
+
+    <Button
+        android:id="@+id/tv_resetBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_E0E0E0"
+        android:minHeight="@dimen/dp_33"
+        android:text="重置"
+        android:textColor="@color/color_7F7F7F"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_confirmBtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/tv_confirmBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/color_5099FD"
+        android:minHeight="@dimen/dp_33"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_resetBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_resetBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

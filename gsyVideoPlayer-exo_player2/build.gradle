@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir.path}/gradle/base.gradle"
+
+dependencies {
+    // 升级依赖库后要重新适配，请慎重修改
+    api 'com.google.android.exoplayer:exoplayer:2.13.3'
+    api 'com.google.android.exoplayer:extension-rtmp:2.13.3'
+    api project(':gsyVideoPlayer-base')
+    //api "com.shuyu:gsyVideoPlayer-base:$gsyVideoVersion"
+}

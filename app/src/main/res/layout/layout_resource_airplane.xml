@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.noober.background.view.BLRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:bl_corners_radius="5dp"
+    app:bl_solid_color="@color/white"
+    >
+
+    <!--资源分布 无人机信息-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_8">
+
+            <View
+                android:id="@+id/view_blue1"
+                android:layout_width="@dimen/dp_4"
+                android:layout_height="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_9"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:background="#5099FD"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无人机信息"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/view_blue1"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="217dp"
+            android:layout_marginBottom="19dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10">
+
+            <RelativeLayout
+                android:id="@+id/rl_left_image"
+                android:layout_width="@dimen/dp_144"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/shape_image_border_gray"
+                android:layout_centerInParent="true"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_airplane_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/rl_left_image"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_title_name"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="名称："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_airplane_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_title_name"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
+                        android:textColor="#343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_SN_title"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="SN码："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_SN_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_SN_title"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
+                        android:textColor="#343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_airplane_state_tile"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="状态："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_airplane_state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_airplane_state_tile"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_8">
+
+                    <TextView
+                        android:id="@+id/tv_brand_tile"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="品牌："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_brand_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_brand_tile"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/color_E9EEFF"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_longitude_title"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="经度："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_longitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_longitude_title"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
+                        android:textColor="#343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_latitude_title"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:text="纬度："
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_latitude"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/tv_latitude_title"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text=""
+                        android:textColor="#343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_high_tile"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="高度："
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_high"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_toRightOf="@+id/tv_high_tile"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_level_speed_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="水平速度："
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_toRightOf="@+id/tv_high"
+                        android:textColor="#ff343434"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_level_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_level_speed_title"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_high_speed_tile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="true"
+                        android:text="高度方向速度："
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_high_speed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_high_speed_tile"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_3">
+
+                    <TextView
+                        android:id="@+id/tv_battery_tile"
+                        android:layout_width="@dimen/dp_50"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="电量："
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_battery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_battery_tile"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_course_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="航向角："
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_8"
+                        android:layout_toRightOf="@+id/tv_battery"
+                        android:textColor="#ff343434"
+                        android:textSize="14sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_course_angle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/tv_course_title"
+                        android:textColor="#ff343434"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/tv_converse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="通话"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/white"
+                        android:paddingRight="@dimen/dp_8"
+                        android:paddingLeft="@dimen/dp_8"
+                        android:background="@color/color_436BFF"
+                        android:textSize="12sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_dispatch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="调度"
+                        android:layout_marginLeft="@dimen/dp_28"
+                        android:paddingRight="@dimen/dp_8"
+                        android:paddingLeft="@dimen/dp_8"
+                        android:layout_toRightOf="@+id/tv_converse"
+                        android:background="#6dd400"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</com.noober.background.view.BLRelativeLayout>

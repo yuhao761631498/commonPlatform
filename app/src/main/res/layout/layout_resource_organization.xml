@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.noober.background.view.BLRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:bl_corners_radius="5dp"
+    app:bl_solid_color="@color/white">
+
+    <!--资源分布 组织机构-->
+    <RelativeLayout
+        android:id="@+id/rl_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_blue1"
+            android:layout_width="@dimen/dp_4"
+            android:layout_height="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_9"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="#5099FD"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织机构"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/view_blue1"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/view_blue1"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/color_E9EEFF"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_org_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_top_title">
+
+        <TextView
+            android:id="@+id/tv_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名称："
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_organization_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toRightOf="@+id/tv_title_name"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="#343434"
+            android:textSize="14sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_title_name"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@color/color_E9EEFF"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rl_org_name"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_position_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="位置："
+            android:textColor="#333333"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#343434"
+            android:textSize="14sp"
+            />
+
+    </LinearLayout>
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/rl_go_here_org"
+        android:layout_width="@dimen/dp_37"
+        android:layout_height="@dimen/dp_37"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginBottom="19dp"
+        android:padding="@dimen/dp_7"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/rl_location"
+        android:src="@mipmap/ic_navigation"
+        android:background="@drawable/shape_blue_circle"
+        />
+
+</com.noober.background.view.BLRelativeLayout>

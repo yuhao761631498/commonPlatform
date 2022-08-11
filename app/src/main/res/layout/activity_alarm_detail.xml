@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EDEDED">
+
+    <RelativeLayout
+        android:id="@+id/rl_topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/color_224CD0"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="@string/app_name"
+            android:padding="10dp"
+            android:src="@mipmap/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/iv_chart"
+            android:layout_toRightOf="@+id/back_imageview"
+            android:paddingLeft="25dp"
+            android:text="告警详情"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_20" />
+
+        <ImageView
+            android:id="@+id/iv_chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/app_name"
+            android:padding="10dp"
+            android:src="@drawable/ic_alarm_chat" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/view_botBarBg"
+        app:layout_constraintTop_toBottomOf="@+id/rl_topBarLayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <com.youth.banner.Banner
+                android:id="@+id/alarm_photo_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:contentDescription="@string/app_name"
+                android:minHeight="200dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_locationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="9dp"
+                android:drawableLeft="@drawable/ic_alarm_solid_location"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:text="预警定位"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:bl_corners_radius="40dp"
+                app:bl_solid_color="#61d8d8d8"
+                app:layout_constraintBottom_toBottomOf="@+id/alarm_photo_imageview"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@+id/alarm_photo_imageview"
+                app:layout_constraintRight_toLeftOf="@+id/tv_videoBtn" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_videoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@mipmap/ic_alarm_detail_play"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:text="抓拍视频"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:bl_corners_radius="40dp"
+                app:bl_solid_color="#61d8d8d8"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_locationBtn"
+                app:layout_constraintLeft_toRightOf="@+id/tv_locationBtn"
+                app:layout_constraintRight_toRightOf="@+id/alarm_photo_imageview"
+                app:layout_constraintTop_toTopOf="@+id/tv_locationBtn" />
+
+            <com.noober.background.view.BLConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:bl_corners_radius="2dp"
+                app:bl_solid_color="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/alarm_photo_imageview">
+
+                <TextView
+                    android:id="@+id/tv_alarmInfoLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="预警信息: "
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_alarmInfoContent" />
+
+                <TextView
+                    android:id="@+id/tv_alarmInfoContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="10dp"
+                    android:minHeight="40dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="【人员入侵】" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/view_barrier1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tv_alarmInfoLabel,tv_alarmInfoContent" />
+
+                <TextView
+                    android:id="@+id/tv_alarmTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="预警时间:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/view_barrier1" />
+
+                <TextView
+                    android:id="@+id/tv_alarmTimeContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_alarmTimeLabel"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_alarmTimeLabel"
+                    app:layout_constraintRight_toLeftOf="@+id/alarm_status_textview"
+                    app:layout_constraintTop_toTopOf="@+id/tv_alarmTimeLabel"
+                    tools:text="2022-01-22" />
+
+                <com.noober.background.view.BLTextView
+                    android:id="@+id/alarm_status_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minWidth="55dp"
+                    android:paddingLeft="9dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="9dp"
+                    android:paddingBottom="3dp"
+                    android:textColor="@color/yellow_F7B500"
+                    android:textSize="@dimen/sp_12"
+                    app:bl_corners_radius="2dp"
+                    app:bl_stroke_color="@color/yellow_F7B500"
+                    app:bl_stroke_width="1dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_alarmTimeContent"
+                    app:layout_constraintRight_toRightOf="@+id/tv_alarmInfoContent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_alarmTimeContent"
+                    tools:text="" />
+
+                <View
+                    android:id="@+id/view_line1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@color/color_f1f1f1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_alarmTimeLabel" />
+
+                <TextView
+                    android:id="@+id/tv_remarkLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="备注信息:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line1" />
+
+                <TextView
+                    android:id="@+id/tv_remarkContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_remarkLabel"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_remarkLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_remarkLabel"
+                    tools:text="2022-01-22" />
+
+                <View
+                    android:id="@+id/view_line2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@color/color_f1f1f1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_remarkLabel" />
+
+                <TextView
+                    android:id="@+id/tv_answerThePoliceLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:text="接警时间:"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line2" />
+
+                <TextView
+                    android:id="@+id/tv_answerThePoliceContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_answerThePoliceLabel"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_answerThePoliceLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_answerThePoliceLabel"
+                    tools:text="2022-01-22" />
+
+                <View
+                    android:id="@+id/view_line3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@color/color_f1f1f1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_answerThePoliceLabel" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/view_group1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="tv_remarkLabel,
+                    tv_remarkContent,
+                    view_line2,
+                    tv_answerThePoliceLabel,
+                    tv_answerThePoliceContent,
+                    view_line3" />
+
+                <TextView
+                    android:id="@+id/tv_dispatchLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableRight="@mipmap/icon_right_arrow"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line3"
+                    tools:text="已分派*人(已接警*人)" />
+
+                <TextView
+                    android:id="@+id/tv_operatorLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="70dp"
+                    android:text="操作员:"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_dispatchLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_dispatchLabel" />
+
+                <TextView
+                    android:id="@+id/tv_operateNameAndTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_operatorLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_operatorLabel"
+                    tools:text="三三 2022-01-30 12:00:00" />
+
+                <TextView
+                    android:id="@+id/tv_operatorRemarkLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="70dp"
+                    android:text="备注信息："
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_operatorLabel"
+                    app:layout_constraintTop_toTopOf="@+id/tv_operatorRemarkContent" />
+
+                <TextView
+                    android:id="@+id/tv_operatorRemarkContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toRightOf="@+id/tv_operatorRemarkLabel"
+                    app:layout_constraintRight_toRightOf="@+id/tv_operateNameAndTime"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_operatorLabel"
+                    tools:text="问题严重，请及时处理并反馈" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/view_barrier2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="tv_operatorRemarkLabel,tv_operatorRemarkContent" />
+
+                <View
+                    android:id="@+id/view_line4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@color/color_f1f1f1"
+                    app:layout_constraintTop_toBottomOf="@+id/view_barrier2" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/view_group2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_dispatchLabel,
+                    tv_operatorLabel,
+                    tv_operateNameAndTime,
+                    tv_operatorRemarkLabel,
+                    tv_operatorRemarkContent,
+                    view_line4" />
+
+                <TextView
+                    android:id="@+id/tv_handleLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="已处理"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_handleContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_handleLabel"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_alarm_handle" />
+
+                <View
+                    android:id="@+id/view_line5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@color/color_f1f1f1"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_handleContent" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/view_group3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="tv_handleLabel,
+                    rv_handleContent,view_line5" />
+
+                <TextView
+                    android:id="@+id/tv_supplementaryHandleLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:text="补充处理信息"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="@+id/tv_alarmInfoLabel"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_line5" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_supplementaryHandleContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_supplementaryHandleLabel"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_alarm_handle" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/view_group4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="tv_supplementaryHandleLabel,
+                    rv_supplementaryHandleContent" />
+            </com.noober.background.view.BLConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/view_botBarBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="45dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_botBtn1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="18dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="14sp"
+        app:bl_corners_radius="2dp"
+        app:bl_selected_solid_color="@color/color_1C3AA9"
+        app:bl_selected_textColor="@color/white"
+        app:bl_stroke_color="@color/color_dddddd"
+        app:bl_stroke_width="1dp"
+        app:bl_unSelected_solid_color="@color/white"
+        app:bl_unSelected_textColor="@color/color_333333"
+        app:layout_constraintBottom_toBottomOf="@+id/view_botBarBg"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_botBtn2"
+        app:layout_constraintTop_toTopOf="@+id/view_botBarBg"
+        tools:text="分派" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_botBtn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="18dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="14sp"
+        app:bl_corners_radius="2dp"
+        app:layout_goneMarginLeft="20dp"
+        app:layout_goneMarginRight="20dp"
+        app:bl_selected_solid_color="@color/color_1C3AA9"
+        app:bl_selected_textColor="@color/white"
+        app:bl_stroke_color="@color/color_dddddd"
+        app:bl_stroke_width="1dp"
+        android:visibility="gone"
+        app:bl_unSelected_solid_color="@color/white"
+        app:bl_unSelected_textColor="@color/color_333333"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_botBtn1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_botBtn1"
+        app:layout_constraintRight_toLeftOf="@+id/tv_botBtn3"
+        app:layout_constraintTop_toTopOf="@+id/tv_botBtn1"
+        tools:text="误报" />
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/tv_botBtn3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textSize="14sp"
+        app:bl_corners_radius="2dp"
+        app:layout_goneMarginLeft="20dp"
+        app:bl_selected_solid_color="@color/color_1C3AA9"
+        app:bl_selected_textColor="@color/white"
+        app:bl_stroke_color="@color/color_dddddd"
+        app:bl_stroke_width="1dp"
+        app:bl_unSelected_solid_color="@color/white"
+        app:bl_unSelected_textColor="@color/color_333333"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_botBtn2"
+        app:layout_constraintLeft_toRightOf="@+id/tv_botBtn2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_botBtn2"
+        tools:text="补充信息" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

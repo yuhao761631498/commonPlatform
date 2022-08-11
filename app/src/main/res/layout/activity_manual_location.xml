@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/view_mapContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.noober.background.view.BLConstraintLayout
+        android:id="@+id/cl_searchBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="48dp"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/app_name"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_back_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_inputContent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:hint="请输入地址名称"
+            android:inputType="text"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:minHeight="36dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:textColorHint="@color/gray_979899"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_backBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+    </com.noober.background.view.BLConstraintLayout>
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/colorLine"
+        app:layout_constraintTop_toBottomOf="@+id/cl_searchBar" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_locationBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="70dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_manual_locaiton"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_zoomOutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_zoom_out"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_locationBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_locationBtn" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_enlargeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:minWidth="34dp"
+        android:minHeight="34dp"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_map_enlarge"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iv_zoomOutBtn"
+        app:layout_constraintEnd_toEndOf="@+id/iv_zoomOutBtn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_subLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="50dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_curMonitor_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
+            android:minHeight="48dp"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_confirmBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="**路**街道" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/tv_confirmBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:bl_corners_radius="5dp"
+            app:bl_solid_color="@color/color_436BFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_searchContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_line1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

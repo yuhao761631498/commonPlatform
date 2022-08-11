@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fafafa"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll_subLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/icon_home_banner"
+        android:minHeight="80dp"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_7"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_27"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/icon_home_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/app_internal_name"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_20"
+            app:autoSizeMaxTextSize="@dimen/sp_20"
+            app:autoSizeMinTextSize="@dimen/sp_12"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/home_logo"
+            app:layout_constraintLeft_toRightOf="@+id/home_logo"
+            app:layout_constraintRight_toLeftOf="@+id/view_barrier1"
+            app:layout_constraintTop_toTopOf="@+id/home_logo" />
+
+        <TextView
+            android:id="@+id/position_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/weather_textview"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="江夏区" />
+
+        <TextView
+            android:id="@+id/temp_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_7"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintRight_toLeftOf="@+id/weather_textview"
+            app:layout_constraintTop_toTopOf="@+id/weather_textview"
+            tools:text="9℃" />
+
+        <TextView
+            android:id="@+id/weather_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/position_textview"
+            app:layout_constraintTop_toBottomOf="@+id/position_textview"
+            tools:text="晴天" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/view_barrier1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="position_textview,temp_textview,weather_textview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_subLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_24"
+        android:background="@color/color_fffaec"
+        app:layout_constraintTop_toBottomOf="@+id/ll_subLayout1">
+
+        <ImageView
+            android:id="@+id/iv_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/ic_notify"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_notifyTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="[公告]"
+            android:textColor="@color/color_436BFF"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/iv_notify"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.youth.banner.Banner
+            android:id="@+id/view_notifyBanner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            app:banner_orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_notifyTip"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_subLayout2">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|snap|enterAlways">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_fafafa">
+
+                    <TextView
+                        android:id="@+id/alarm_center_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:drawableTop="@mipmap/icon_alarm"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="预警中心"
+                        android:textSize="@dimen/sp_13"
+                        app:layout_constraintEnd_toStartOf="@+id/video_control_layout"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/video_control_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/icon_video_control"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="视频巡控"
+                        android:textSize="@dimen/sp_13"
+                        app:layout_constraintBottom_toBottomOf="@+id/alarm_center_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_patrolDiary"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/alarm_center_layout"
+                        app:layout_constraintTop_toTopOf="@+id/alarm_center_layout" />
+
+                    <TextView
+                        android:id="@+id/ll_resourceLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/icon_real_resource"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="资源分布"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/video_control_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/my_case_layout"
+                        app:layout_constraintStart_toEndOf="@+id/video_control_layout"
+                        app:layout_constraintTop_toTopOf="@+id/video_control_layout" />
+
+                    <TextView
+                        android:id="@+id/my_case_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/icon_my_case"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="我的案件"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/ll_resourceLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ll_resourceLayout"
+                        app:layout_constraintTop_toTopOf="@+id/ll_resourceLayout" />
+
+                    <TextView
+                        android:id="@+id/tv_patrolDiary"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:drawableTop="@mipmap/ic_patrol_diary"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="巡逻日记"
+                        android:textSize="@dimen/sp_13"
+                        app:layout_constraintBottom_toBottomOf="@+id/video_control_layout"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_fore_warn"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/video_control_layout"
+                        app:layout_constraintTop_toTopOf="@+id/video_control_layout" />
+
+                    <TextView
+                        android:id="@+id/tv_dataMonitoring"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/ic_data_monitoring"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="数据监测"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@+id/video_control_layout"
+                        app:layout_constraintStart_toEndOf="@+id/tv_patrolDiary"
+                        app:layout_constraintTop_toTopOf="@+id/tv_patrolDiary" />
+
+
+                    <TextView
+                        android:id="@+id/tv_fore_warn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableTop="@mipmap/ic_fore_warn_stat"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="预警统计"
+                        android:textSize="@dimen/sp_13"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_patrolDiary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tv_patrolDiary"
+                        app:layout_constraintTop_toTopOf="@+id/tv_patrolDiary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/mRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_5"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_content_layout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:paddingBottom="60dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.gdu.command.views.DealCaseView
+        android:id="@+id/deal_case_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

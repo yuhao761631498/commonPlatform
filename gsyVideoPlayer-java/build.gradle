@@ -1,0 +1,14 @@
+apply plugin: 'com.android.library'
+
+apply from: "${rootDir.path}/gradle/base.gradle"
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    api 'com.github.CarGuo:GSYIjkJava:1.0.0'
+    //api viewDependencies.ijkplayer_exo
+    api 'com.andkulikov:transitionseverywhere:2.1.0'
+    api project(':gsyVideoPlayer-proxy_cache')
+    api project(':gsyVideoPlayer-base')
+    //api "com.shuyu:gsyVideoPlayer-base:$gsyVideoVersion"
+    //api "com.shuyu:gsyvideoplayer-androidvideocache:$gsyVideoVersion"
+}

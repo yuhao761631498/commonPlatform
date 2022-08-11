@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.cases.SiteDealActivity">
+
+    <include
+        android:id="@+id/inc_topBar"
+        layout="@layout/layout_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inc_topBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_important_deal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_3"
+                android:text="*"
+                android:textColor="#D0021B"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_deal_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="55dp"
+                android:minHeight="40dp"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/tv_important_deal"
+                app:layout_constraintTop_toTopOf="@+id/tv_important_deal"
+                tools:text="处理结果:" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_deal_verbal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:text="口头警告"
+                android:textSize="14sp"
+                app:bl_corners_radius="5dp"
+                app:bl_selected_solid_color="@color/color_436BFF"
+                app:bl_selected_textColor="@color/white"
+                app:bl_unSelected_solid_color="@color/color_EFEFEF"
+                app:bl_unSelected_textColor="@color/color_333333"
+
+                app:layout_constraintEnd_toStartOf="@+id/tv_deal_administrative"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deal_label" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_deal_administrative"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:text="行政处罚"
+                android:textSize="14sp"
+                app:bl_corners_radius="5dp"
+
+                app:bl_selected_solid_color="@color/color_436BFF"
+                app:bl_selected_textColor="@color/white"
+                app:bl_unSelected_solid_color="@color/color_EFEFEF"
+                app:bl_unSelected_textColor="@color/color_333333"
+
+                app:layout_constraintEnd_toStartOf="@+id/tv_deal_other"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_deal_verbal"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deal_label" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_deal_other"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:gravity="center"
+                android:minHeight="32dp"
+                android:text="其他"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:bl_corners_radius="5dp"
+
+                app:bl_selected_solid_color="@color/color_436BFF"
+                app:bl_selected_textColor="@color/white"
+                app:bl_unSelected_solid_color="@color/color_EFEFEF"
+                app:bl_unSelected_textColor="@color/color_333333"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_deal_administrative"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deal_label" />
+
+
+            <include
+                android:id="@+id/inc_alarm_location_again"
+                layout="@layout/layout_base_alarm_input2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deal_verbal" />
+
+            <TextView
+                android:id="@+id/tv_importantTip_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_3"
+                android:text="*"
+                android:textColor="#D0021B"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@+id/inc_alarm_location_again"
+                app:layout_constraintTop_toBottomOf="@+id/inc_alarm_location_again" />
+
+            <TextView
+                android:id="@+id/tv_pic_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="55dp"
+                android:minHeight="40dp"
+                android:text="预警照片"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/tv_importantTip_pic"
+                app:layout_constraintTop_toBottomOf="@+id/inc_alarm_location_again" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pic_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pic_label"
+                app:spanCount="5"
+                tools:listitem="@layout/item_case_picture" />
+
+            <TextView
+                android:id="@+id/tv_importantTip_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingRight="@dimen/dp_3"
+                android:text="*"
+                android:textColor="#D0021B"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_importantTip_pic"
+                app:layout_constraintTop_toBottomOf="@+id/rv_pic_content" />
+
+            <TextView
+                android:id="@+id/tv_video_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:minWidth="55dp"
+                android:minHeight="40dp"
+                android:text="预警视频"
+                android:textColor="@color/color_333333"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/tv_importantTip_video"
+                app:layout_constraintTop_toBottomOf="@+id/rv_pic_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_video_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_video_label"
+                app:spanCount="5"
+                tools:listitem="@layout/item_case_picture" />
+
+            <include
+                android:id="@+id/inc_alarm_remark"
+                layout="@layout/layout_base_alarm_input2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_16"
+                app:layout_constraintTop_toBottomOf="@+id/rv_video_content" />
+
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_cancel_deal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:text="取消"
+                android:textColor="@color/color_333333"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="@color/white"
+                app:bl_stroke_color="@color/color_DFDEDE"
+                app:bl_stroke_width="@dimen/dp_1"
+                app:layout_constraintEnd_toStartOf="@+id/tv_site_deal"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inc_alarm_remark" />
+
+            <com.noober.background.view.BLTextView
+                android:id="@+id/tv_site_deal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:gravity="center"
+                android:minHeight="40dp"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:bl_corners_radius="5dp"
+                app:bl_solid_color="@color/color_436BFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_cancel_deal"
+                app:layout_constraintTop_toBottomOf="@+id/inc_alarm_remark" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

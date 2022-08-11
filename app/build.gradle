@@ -1,0 +1,193 @@
+plugins {
+    id 'com.android.application'
+}
+
+def library = rootProject.ext.library
+def config = rootProject.ext.ver
+
+android {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def keystoreFilePath = properties.getProperty("keystore_path")
+    def keystorePwd = properties.getProperty('keystore_pwd')
+    def keystoreAlias = properties.getProperty('keystore_alias')
+    def keystoreAliasPwd = properties.getProperty('keystore_alias_pwd')
+
+    def keystoreFilePath2 = properties.getProperty("keystore_path2")
+    def keystorePwd2 = properties.getProperty('keystore_pwd2')
+    def keystoreAlias2 = properties.getProperty('keystore_alias2')
+    def keystoreAliasPwd2 = properties.getProperty('keystore_alias_pwd2')
+
+    signingConfigs {
+        yzjbSC {
+            storeFile file(keystoreFilePath)
+            storePassword keystorePwd
+            keyAlias keystoreAlias
+            keyPassword keystoreAliasPwd
+        }
+        hqzcSC {
+            storeFile file(keystoreFilePath2)
+            storePassword keystorePwd2
+            keyAlias keystoreAlias2
+            keyPassword keystoreAliasPwd2
+        }
+    }
+
+    compileSdkVersion 29
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.gdu.command"
+        minSdkVersion 21
+        targetSdkVersion config.targetSdkVersion
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "arm64-v8a", "armeabi-v7a"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // EventBus Apt 索引类生成位置
+                arguments = [eventBusIndex: applicationId + '.MyEventBusIndex']
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    flavorDimensions "cjdbh"
+
+    productFlavors {
+        yzjb {
+            applicationId "com.gdu.command"
+            versionCode 23
+            versionName "3.0.013"
+            dimension 'cjdbh'
+            manifestPlaceholders = [
+                    AMapKey: "92f7306caf3af9c8955828d10766093e"  //百度地图申请的key
+            ]
+            signingConfig signingConfigs.yzjbSC
+        }
+        hqzc {
+            applicationId "com.gdu.hqzc"
+            versionCode 2
+            versionName "1.0.2"
+            dimension 'cjdbh'
+            manifestPlaceholders = [
+                    AMapKey: "8fdc9137ecac60c1bfb0ed99442f2161"  //百度地图申请的key
+            ]
+            signingConfig signingConfigs.hqzcSC
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig null
+        }
+        debug {
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig null
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include "arm64-v8a", "armeabi-v7a" //select ABIs to build APKs for
+//            universalApk true //generate an additional APK that contains all the ABIs
+//        }
+//    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->  // each 改为 all
+            def fileName = new Date().format("yyyyMMdd-HHmm")
+            def outFile = output.outputFile
+            def abi = output.getFilter(com.android.build.OutputFile.ABI)
+            if (abi == null) abi = "all"//兼容
+            if (outFile != null && outFile.name.endsWith('.apk')) {
+                outputFileName = "${fileName}_${abi}_V${variant.versionName}.apk"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation project(path: ':GduClient')
+    implementation project(path: ':GduPermission')
+    implementation project(path: ':baselibrary')
+    implementation project(path: ':MQTTChat')
+    implementation project(path: ':calendarview')
+    implementation project(path: ':GduImageSelector')
+//    implementation project(path: ':GduPlayer')
+    implementation project(path: ':PickTime')
+
+//    implementation library.vlcPlayer  //VLC播放
+//    implementation 'com.googlecode.mp4parser:isoparser:1.1.21'  //mp4parser 做视频裁剪
+
+
+    implementation library.amapLocation //高德地图
+    implementation library.amap //高德地图定位
+    implementation library.amapSearch //高德地图搜索
+
+//    implementation 'com.google.android.exoplayer:exoplayer:2.14.0'
+//    implementation 'com.google.android.exoplayer:extension-rtmp:2.14.0'
+
+    implementation project(':gsyVideoPlayer')
+
+    // 替换Shape的背景库: https://github.com/JavaNoober/BackgroundLibrary
+    implementation 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.3'
+    implementation project(path: ':library')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+
+    def room_version = "2.2.0-rc01"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    annotationProcessor library.eventbusAnnotation
+
+    // 权限请求工具类：https://github.com/getActivity/XXPermissions
+    implementation 'com.github.getActivity:XXPermissions:13.5'
+
+    //图标折线图
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    // 增量更新库
+    implementation 'io.sigpipe:jbsdiff:1.0'
+
+    implementation 'com.kyleduo.switchbutton:library:2.1.0'
+
+}

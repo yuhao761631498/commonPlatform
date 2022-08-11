@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fafafa"
+    android:fitsSystemWindows="true">
+
+    <com.amap.api.maps2d.MapView
+        android:id="@+id/resource_map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/back_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_4"
+        app:bl_corners_radius="5dp"
+        app:bl_solid_color="@color/color_80000000"
+        android:src="@mipmap/ic_back" />
+
+    <com.noober.background.view.BLRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginLeft="@dimen/dp_9"
+        android:layout_marginRight="@dimen/dp_9"
+        android:layout_marginTop="@dimen/dp_37"
+        android:visibility="gone"
+        app:bl_corners_radius="10dp"
+        app:bl_solid_color="@color/white">
+
+        <ImageView
+            android:id="@+id/back_imageview_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dp_20"
+            android:paddingRight="@dimen/dp_20"
+            android:src="@mipmap/ic_black_back_arrow" />
+
+        <EditText
+            android:id="@+id/ed_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginRight="@dimen/dp_20"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_toRightOf="@+id/back_imageview_search"
+            android:layout_centerInParent="true"
+            android:hint="请输入地图、坐标"
+            android:textColorHint="@color/gray_979899"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp"
+            />
+
+    </com.noober.background.view.BLRelativeLayout>
+
+    <com.noober.background.view.BLImageView
+        android:id="@+id/iv_position_myself"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="32dp"
+        android:minHeight="32dp"
+        android:padding="7dp"
+        app:bl_corners_radius="4dp"
+        app:bl_solid_color="@android:color/white"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:src="@mipmap/ic_manual_locaiton"
+        />
+
+    <com.noober.background.view.BLRelativeLayout
+        android:id="@+id/rl_show_menu"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_60"
+        app:bl_corners_radius="4dp"
+        app:bl_solid_color="@color/white" >
+
+        <ImageView
+            android:id="@+id/iv_show_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/ic_resource_right_menu"
+            />
+
+    </com.noober.background.view.BLRelativeLayout>
+
+</RelativeLayout>

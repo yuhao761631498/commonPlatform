@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true">
+
+    <TextView
+        android:id="@+id/tv_importantTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingRight="@dimen/dp_3"
+        android:text="*"
+        android:textColor="#D0021B"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minWidth="55dp"
+        android:minHeight="40dp"
+        android:textColor="@color/color_757575"
+        android:textSize="14sp"
+
+        app:layout_constraintLeft_toRightOf="@+id/tv_importantTip"
+        app:layout_constraintTop_toTopOf="@+id/tv_importantTip"
+        tools:text="标签标签" />
+
+    <com.noober.background.view.BLEditText
+        android:id="@+id/et_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:inputType="textMultiLine"
+        android:maxLength="300"
+        android:minHeight="40dp"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_78797B"
+        android:textSize="14sp"
+        android:layout_marginLeft="@dimen/dp_8"
+        app:layout_constraintEnd_toStartOf="@+id/iv_icon"
+        app:layout_constraintStart_toEndOf="@+id/tv_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_label"
+        tools:hint="请选择"
+        tools:ignore="Autofill,LabelFor" />
+
+    <View
+        android:id="@+id/view_line1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/color_bbbbbb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_content" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:minWidth="40dp"
+        android:minHeight="20dp"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/et_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_content"
+        tools:src="@mipmap/ic_alarm_location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

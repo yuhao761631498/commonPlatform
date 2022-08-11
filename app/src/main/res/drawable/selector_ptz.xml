@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/selector_ptz_normal"
+        android:state_selected="false"
+        android:state_pressed="false"/> <!--按键按下时-->
+
+    <item android:drawable="@drawable/selector_ptz_pressed"
+        android:state_selected="false"
+        android:state_pressed="true"/> <!--按键没有按下时-->
+
+</selector>

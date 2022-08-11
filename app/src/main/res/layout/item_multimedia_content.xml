@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:padding="1dp"
+            android:id="@+id/fl_item_multiMedia_content"
+            android:layout_height="90dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:src="@mipmap/filter_img_beautiful"
+                android:scaleType="centerCrop"
+                android:id="@+id/iv_item_multiMedia_content"
+                android:layout_height="match_parent"/>
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:textSize="8dp"
+                android:text="03:50"
+                android:textColor="#dcdcdc"
+                android:gravity="right"
+                android:id="@+id/tv_video_duration"
+                android:layout_gravity="bottom|right"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingRight="@dimen/dp_5"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/icon_video"
+                android:layout_gravity="center"
+                android:id="@+id/iv_icon_video"
+                android:visibility="gone"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingLeft="@dimen/dp_5"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/v_item_multiMedia_content"
+                android:background="#80ffffff"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/iv_item_multiMedia_content_check"
+                android:layout_marginRight="5dp"
+                android:src="@mipmap/icon_multimedia_select"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@mipmap/land_media_download"
+                android:layout_gravity="right"
+                android:id="@+id/iv_item_multiMedia_HadDown"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+</LinearLayout>

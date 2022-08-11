@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="12dp"
+    android:paddingTop="15dp"
+    android:paddingRight="12dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/tv_useName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_alarm_user"
+        android:drawablePadding="7dp"
+        android:gravity="center_vertical"
+        android:minWidth="95dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="李某" />
+
+    <TextView
+        android:id="@+id/tv_unitName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_alarm_unit"
+        android:drawablePadding="7dp"
+        android:gravity="center_vertical"
+        android:minWidth="95dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_useName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_useName"
+        tools:text="武汉市渔政" />
+
+    <TextView
+        android:id="@+id/tv_punishType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_alarm_punish"
+        android:drawablePadding="7dp"
+        android:gravity="center_vertical"
+        android:minWidth="95dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_useName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_useName"
+        tools:text="行政处罚" />
+
+    <TextView
+        android:id="@+id/tv_handleTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/ic_alarm_time"
+        android:drawablePadding="7dp"
+        android:gravity="center_vertical"
+        android:minWidth="95dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_punishType"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_useName"
+        tools:text="2022-01-21   14:05:31" />
+
+    <TextView
+        android:id="@+id/tv_descContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_handleTime"
+        tools:text="多个杆钓鱼，劝阻之后屡教不改，没收了鱼竿，罚款 30元。多个杆钓鱼，劝阻之后屡教不改，没收了鱼竿，罚款 30元。" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_iconContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tv_descContent"
+        app:spanCount="3"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_alarm_handle_icon" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_gray_dash_line"
+        app:layout_constraintTop_toBottomOf="@+id/rv_iconContent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

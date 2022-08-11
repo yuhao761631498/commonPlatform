@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/solar_ffffff">
+
+
+    <TextView
+        android:id="@+id/tv_duty_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_12"
+        android:drawablePadding="@dimen/dp_8"
+        android:text="张三"
+        android:textColor="@color/solar_333333"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_sex"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@mipmap/icon_meal"
+        app:layout_constraintTop_toTopOf="@+id/tv_duty_name"
+        android:layout_marginLeft="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duty_name"
+        app:layout_constraintLeft_toRightOf="@+id/tv_duty_name"/>
+
+
+    <ImageView
+        android:id="@+id/iv_work_type"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@mipmap/icon_day_work"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_duty_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_duty_name"/>
+
+    <TextView
+        android:id="@+id/tv_work_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dp_8"
+        android:text="白班（8:30-17:30）"
+        android:textColor="@color/solar_999999"
+        android:textSize="14sp"
+        android:layout_marginLeft="@dimen/dp_8"
+        app:layout_constraintLeft_toRightOf="@+id/iv_work_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_duty_name"
+        app:layout_constraintTop_toTopOf="@+id/iv_work_type"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_work_type"/>
+
+
+    <TextView
+        android:id="@+id/tv_duty_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:drawableLeft="@mipmap/icon_phone_number"
+        android:text="10086"
+        android:textColor="@color/solar_999999"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_work_type"
+        app:layout_constraintTop_toTopOf="@+id/tv_work_type" />
+
+    <TextView
+        android:id="@+id/tv_call_duty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_12"
+        android:background="@drawable/call_duty_bg"
+        android:drawableTop="@mipmap/icon_call_duty"
+        android:gravity="center"
+        android:text="打电话"
+        android:textColor="@color/solar_55FF00"
+        android:textSize="7sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

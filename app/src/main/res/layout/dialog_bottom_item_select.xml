@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:background="@color/exo_black_opacity_60">
+
+    <View
+        android:id="@+id/view_bottom_dialog_placeHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_bottom_dialog_layout" />
+
+    <com.noober.background.view.BLLinearLayout
+        android:id="@+id/ll_bottom_dialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_bottom_dialog_addressContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="0.5dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:maxLines="1"
+            android:minHeight="40dp"
+            android:textColor="@color/color_5099FD"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:text="地址内容" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_bottom_dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_radius_white_10dp"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_takepicture_album_dialog" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/tv_bottom_dialog_cancelBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:maxLines="1"
+            android:minHeight="40dp"
+            android:textColor="@color/color_5099FD"
+            android:textSize="18sp"
+            app:bl_corners_radius="10dp"
+            app:bl_solid_color="@android:color/white"
+            tools:text="取消" />
+    </com.noober.background.view.BLLinearLayout>
+</RelativeLayout>

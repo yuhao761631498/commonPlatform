@@ -1,0 +1,143 @@
+<resources>
+    <string name="app_name">中国渔政禁捕执法终端</string>
+    <string name="app_internal_name">中国渔政禁捕执法终端</string>
+    <!--    <string name="copy_right_info">Copyright@ 武汉市农业农村局</string>-->
+    <string name="copy_right_info">Copyright@ 荆州市农业农村局</string>
+    <string name="title_home">首页</string>
+    <string name="title_video">监控</string>
+    <string name="title_organization">组织</string>
+    <string name="title_message">消息</string>
+    <string name="title_person">我的</string>
+
+    <string name="please_input_code">请输入账号</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="log_in">登录</string>
+    <string name="forget_psw">忘记密码</string>
+    <string name="reset_psw">重置密码</string>
+    <string name="forewarn_stat">预警统计</string>
+    <string name="artificial_alarm">人工告警</string>
+    <string name="please_input_phone_number">请输入手机号码</string>
+    <string name="please_input_verification_code">请输入验证码</string>
+    <string name="get_verification_code">获取验证码</string>
+    <string name="go_next">下一步</string>
+    <string name="please_input_code_toast">请输入账号</string>
+    <string name="please_input_password_toast">请输入密码</string>
+    <string name="agriculture_law">农业执法</string>
+    <string name="login_faile">登录失败</string>
+    <string name="logining">登录中</string>
+    <string name="person_center">个人信息</string>
+    <string name="head_img">头像</string>
+    <string name="name">姓名</string>
+    <string name="sex">性别</string>
+    <string name="phone_number">电话</string>
+    <string name="work_unit">所属单位</string>
+    <string name="unit_phone_number">办公电话</string>
+    <string name="login_out">退出登录</string>
+    <string name="loading">加载中</string>
+    <string name="woman">女</string>
+    <string name="man">男</string>
+
+    <string name="base_dialog_loading">加载中...</string>
+
+    <string name="load_all">已全部加载</string>
+    <string name="Date_Format">%1$d年%2$d月%3$d日</string>
+    <string name="laoding_more">正在加载中...</string>
+
+    <string name="find_people">人员活动</string>
+    <string name="find_ship">船舶闯入</string>
+    <string name="illegal_fishing">非法垂钓</string>
+    <string name="staff_retention">非法捕捞</string>
+
+    <string name="verbal_warning">口头警告</string>
+    <string name="administrative_penalty">行政处罚</string>
+    <string name="administrative_attachment">行政拘留</string>
+    <string name="other_penalty">其它处罚</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="english_week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+
+    <string-array name="chinese_week_string_array">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+
+    <string name="list_dialog_title">动态更新</string>
+
+    <string name="func_dialog_title">功能支持</string>
+
+    <string-array name="list_dialog_items">
+        <item>周日为周起始</item>
+        <item>周一为周起始</item>
+        <item>周六为周起始</item>
+        <item>更换选择模式：单选/默认</item>
+        <item>热插拔更换周月视图</item>
+        <item>月视图模式：全部显示</item>
+        <item>月视图模式：仅当前月份</item>
+        <item>月视图模式：自动填充</item>
+    </string-array>
+
+    <string-array name="func_dialog_items">
+        <item>展开日历布局</item>
+        <item>收缩日历布局</item>
+        <item>上一页</item>
+        <item>下一页</item>
+        <item>返回今天</item>
+        <item>限制日期范围</item>
+        <item>显示日期范围</item>
+    </string-array>
+
+
+    <string name="flyme">Flyme手机日历</string>
+    <string name="flyme_desc">国内手机日历风格，自动选择第一天</string>
+
+    <string name="custom_china">精美定制中国风</string>
+    <string name="custom_china_desc">周末变色、圆点事件+文本标记</string>
+
+    <string name="mix">Mix错位风格</string>
+    <string name="mix_desc">Mix错位风格</string>
+
+    <string name="full">全屏风格</string>
+    <string name="full_desc">如果你需要的话，分分钟的事</string>
+
+    <string name="range">范围选择</string>
+    <string name="range_desc">如果你需要范围选择的日历</string>
+
+    <string name="multi">多选风格</string>
+    <string name="multi_desc">如果你需要多选风格的日历</string>
+
+    <string name="colorful">多彩风格</string>
+    <string name="colorful_desc">取决于你怎么绘制</string>
+
+    <string name="view_pager">ViewPager风格</string>
+    <string name="view_pager_desc">如果内容是ViewPager的话</string>
+
+    <string name="single">单选风格</string>
+    <string name="single_desc">单选风格是比较受欢迎</string>
+
+    <string name="progress">进度条风格</string>
+    <string name="progress_desc">如果你正在开发todo APP的话</string>
+
+    <string name="index">下标订阅风格</string>
+    <string name="index_desc">只要你想画，就能画</string>
+
+    <string name="galaxy">星系风格</string>
+    <string name="galaxy_desc">很简单就能定制</string>
+
+    <string name="simple">简单风格</string>
+    <string name="simple_desc">这是最简单的日历</string>
+</resources>

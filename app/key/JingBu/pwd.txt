@@ -1,0 +1,2 @@
+storePwd: gducp1234
+aliasPwd: gducp4321

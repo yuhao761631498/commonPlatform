@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="11dp"
+        android:text="2016-05"
+        android:layout_marginLeft="23dp"
+        android:gravity="center_vertical|left"
+        android:id="@+id/tv_multiMedia_date"
+        android:textColor="@color/color_436BFF"
+        android:layout_weight="1"
+        android:layout_height="32dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:button="@drawable/selector_land_meltimedia_checkbox"
+        android:padding="3dp"
+        android:layout_marginRight="25dp"
+        android:id="@+id/checkbox_multiMedia_date"
+        android:layout_height="wrap_content" />
+</LinearLayout>
